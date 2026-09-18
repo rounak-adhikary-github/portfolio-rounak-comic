@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" role="img" aria-label="Ben-day halftone dot texture">
+  <title>Halftone dots</title>
+  <!-- Seamless ben-day dot tile: the dot at each corner is quartered, and
+       re-assembles into a whole circle when the tile repeats — the classic
+       comic-book printing screen. -->
+  <g fill="#141414">
+    <circle cx="0" cy="0" r="2.6"/>
+    <circle cx="8" cy="8" r="2.6"/>
+  </g>
+</svg>

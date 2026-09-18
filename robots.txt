@@ -1,0 +1,7 @@
+# Rounak Adhikary — portfolio (single page, nothing private here)
+User-agent: *
+Allow: /
+
+# No sitemap line on purpose: a sitemap needs an absolute URL, and this repo
+# is meant to be deployable to any user/organisation Pages address. One page
+# is discoverable from links alone. Add one after the first deploy if you want.

@@ -1,0 +1,20 @@
+{
+  "name": "Rounak Adhikary — Technology Analyst",
+  "short_name": "Rounak A.",
+  "description": "Portfolio of Rounak Adhikary — Core Java, Spring Boot, REST APIs, microservices, migrations and reporting. Kolkata, India. Drawn as a comic book.",
+  "lang": "en-IN",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#f4efe2",
+  "theme_color": "#f4efe2",
+  "icons": [
+    {
+      "src": "assets/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}
