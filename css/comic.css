@@ -324,7 +324,9 @@ a:hover{color:var(--red)}
 }
 
 /* ---------------- 10. stat stamps ---------------- */
-.stamps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;margin:14px 0 4px}
+/* auto-fit rather than a fixed four, so the strip still fills its row once
+   the fifth stamp (personal projects) is in the grid */
+.stamps{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:16px;margin:14px 0 4px}
 .stamp{
   position:relative;overflow:hidden;text-align:center;
   background:var(--panel);border:var(--edge) solid var(--ink);
@@ -336,6 +338,7 @@ a:hover{color:var(--red)}
 .stamp:nth-child(2){background:var(--cyan)}
 .stamp:nth-child(3){background:var(--panel)}
 .stamp:nth-child(4){background:var(--red);color:#fff}
+.stamp:nth-child(5){background:var(--green);color:#fff}
 .stamp::after{
   content:"";position:absolute;inset:auto -10px -14px auto;width:86px;height:86px;
   background:url("../assets/tex-halftone.svg") 0 0 / 8px 8px repeat;opacity:.45;
@@ -417,6 +420,24 @@ a:hover{color:var(--red)}
 .card .panel-body{padding:14px}
 .card h4{margin:0 0 7px;font-family:var(--display);text-transform:uppercase;letter-spacing:1px;font-size:1.05rem}
 .card p{margin:0;font-size:.9rem}
+
+/* ---------------- 15b. spin-off projects ---------------- */
+.projects-intro{margin:0 0 22px;max-width:74ch;font-size:.95rem;color:var(--ink-soft)}
+.projects{display:grid;grid-template-columns:repeat(auto-fit,minmax(276px,1fr));gap:24px}
+/* the series repeats its caption — like covers on a spinner rack — so the
+   colour cycle does the differentiating and the title does the naming */
+.projects > .panel:nth-child(5n+1) .caption{background:var(--yellow)}
+.projects > .panel:nth-child(5n+2) .caption{background:var(--cyan)}
+.projects > .panel:nth-child(5n+3) .caption{background:var(--red);color:#fff}
+.projects > .panel:nth-child(5n+4) .caption{background:var(--green);color:#fff}
+.projects > .panel:nth-child(5n+5) .caption{background:var(--purple);color:#fff}
+.projects > .panel:nth-child(odd){rotate:-.4deg}
+.projects > .panel:nth-child(even){rotate:.45deg}
+/* the live-link button is pushed to the bottom of the card, so a row of
+   unequal descriptions still lines its buttons up */
+.projects .card{display:flex;flex-direction:column}
+.projects .card .panel-body{display:flex;flex-direction:column;flex:1}
+.projects .card .card-links{margin:auto 0 0;padding-top:15px}
 
 /* ---------------- 16. marks table ---------------- */
 table.marks{width:100%;border-collapse:collapse;font-size:.88rem}
@@ -549,8 +570,9 @@ table.marks td b{color:var(--red)}
   body{font-size:15px}
   .wrap{width:min(1160px,100% - 20px)}
   .masthead-inner{gap:9px;padding:8px 0}
-  /* five tabs on one tight row beats a three-row sticky header */
-  .tabs{gap:4px;width:100%;order:3;justify-content:center;flex-wrap:nowrap}
+  /* six tabs still fit one tight row on most phones; wrap is the safety net
+     for the narrowest ones, which beats a horizontally scrolling header */
+  .tabs{gap:4px;width:100%;order:3;justify-content:center;flex-wrap:wrap}
   .tabs a{font-size:.68rem;padding:6px 7px;letter-spacing:.4px;box-shadow:2px 2px 0 var(--ink)}
   .head-tools .btn.tiny{font-size:.64rem;padding:5px 8px}
   .logo-text b{font-size:.95rem}
@@ -604,7 +626,7 @@ table.marks td b{color:var(--red)}
   .foot-links a,.top-link{color:#000}
   #hitCount{border-color:#000;background:#fff}
   .panel,.stamp{box-shadow:none;rotate:0deg;border:2px solid #000;break-inside:avoid}
-  .caption,.panel-label,.stamp:nth-child(1),.stamp:nth-child(2),.stamp:nth-child(4){background:#fff;color:#000;border-color:#000;box-shadow:none}
+  .caption,.panel-label,.stamp:nth-child(1),.stamp:nth-child(2),.stamp:nth-child(4),.stamp:nth-child(5){background:#fff;color:#000;border-color:#000;box-shadow:none}
   .title{color:#000;-webkit-text-stroke:0;text-shadow:none}
   .subtitle,.ticks b,table.marks td b,.fineprint .blink{color:#000;-webkit-text-stroke:0}
   .tags li{background:#fff;box-shadow:none;rotate:0deg}
